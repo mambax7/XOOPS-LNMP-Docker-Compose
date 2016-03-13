@@ -13,3 +13,6 @@ Setup XOOPS CMS on LNMP(Linux Nginx MySQL PHP) Server with Docker Compose
 ## how to setup xoops
 * put xoops_data and xoops_lib into this repo's ./var directory
 * put htdocs into ./var/www/html
+
+## how to add nginx configuration
+* please add nginx conf file into ./conf.d directory
