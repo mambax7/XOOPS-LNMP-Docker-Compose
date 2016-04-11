@@ -7,8 +7,6 @@ httpserver:
   volumes:
     - ./volumes/log/nginx:/var/log/nginx
     - ./volumes/var/www:/var/www
-    - ./volumes/var/xoops_data:/var/xoops_data
-    - ./volumes/var/xoops_lib:/var/xoops_lib
     - ./volumes/nginx/nginx.conf:/etc/nginx/nginx.conf
     - ./volumes/nginx/conf.d/:/etc/nginx/conf.d/
 
@@ -20,14 +18,12 @@ php:
     - "9000"
   volumes:
     - ./volumes/var/www:/var/www
-    - ./volumes/var/xoops_data:/var/xoops_data
-    - ./volumes/var/xoops_lib:/var/xoops_lib
 
 db:
-  image: mysql:5.5
+  image: mysql:latest
   expose:
     - "3306"
   environment:
     MYSQL_ROOT_PASSWORD: password
   volumes:
-    - ./volumes/log/mysqld.log
+    - ./volumes/log/mysqld.log:/var/log/mysqld.log
